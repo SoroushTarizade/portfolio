@@ -49,7 +49,7 @@ export default function AboutPreview() {
             <p className="mt-5 hidden text-sm leading-7 text-text-secondary min-[720px]:block lg:text-base lg:leading-8">
               I’m continuously exploring new technologies and improving my
               skills by building real-world projects. Outside of programming,
-              I enjoy playing football, photography, and gaming.
+              I enjoy playing volleyball, photography, and gaming.
             </p>
 
             {/* Link */}
