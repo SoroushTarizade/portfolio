@@ -37,22 +37,59 @@
   }
 },
 
-  "aboutPreview": {
-    "title": "ABOUT ME",
+"about": {
+  "title": "ABOUT ME",
+  "preview": {
     "intro": "I’m a frontend developer focused on building modern, responsive, and user-friendly web experiences. I enjoy turning ideas into clean interfaces and solving problems through code.",
     "description": "I’m continuously exploring new technologies and improving my skills by building real-world projects. Outside of programming, I enjoy playing volleyball, photography, and gaming.",
-    "more": "MORE ABOUT ME"
+    "link": "MORE ABOUT ME"
   },
-
-  "about": {
+  "page": {
     "title": "ABOUT ME",
     "subtitle": "I’m a Frontend Developer who enjoys turning ideas into modern, responsive, and user-friendly web experiences.",
-    "paragraph1": "I’m a Frontend Developer who enjoys turning ideas into thoughtful, interactive, and responsive web experiences. My journey into development has been driven by curiosity and a genuine interest in understanding how things work and how they can be made better.",
-    "paragraph2": "I primarily work with JavaScript, React, Next.js, and Tailwind CSS, while continuously expanding my knowledge across the modern web development ecosystem. I learn best by building, experimenting, solving problems, and turning what I learn into real projects.",
-    "paragraph3": "My background in Social Sciences has also shaped the way I think about people, communication, and how users interact with the things we build. I’m currently looking for remote, full-time opportunities where I can contribute to meaningful projects while continuing to grow as a developer.",
-    "paragraph4": "When I’m away from the screen, you’ll usually find me playing volleyball, working out, or listening to a good podcast.",
-    "downloadResume": "DOWNLOAD RESUME"
+    "paragraphs": [
+      "I’m a Frontend Developer who enjoys turning ideas into thoughtful, interactive, and responsive web experiences. My journey into development has been driven by curiosity and a genuine interest in understanding how things work and how they can be made better.",
+      "I primarily work with JavaScript, React, Next.js, and Tailwind CSS, while continuously expanding my knowledge across the modern web development ecosystem. I learn best by building, experimenting, solving problems, and turning what I learn into real projects.",
+      "My background in Social Sciences has also shaped the way I think about people, communication, and how users interact with the things we build. I’m currently looking for remote, full-time opportunities where I can contribute to meaningful projects while continuing to grow as a developer.",
+      "When I’m away from the screen, you’ll usually find me playing volleyball, working out, or listening to a good podcast."
+    ],
+    "resume": "DOWNLOAD RESUME"
   },
+  "capabilities": {
+    "title": "MY CAPABILITIES",
+    "description": "I enjoy building modern web experiences that are responsive, intuitive, and easy to maintain. My main focus is frontend development with JavaScript, React, Next.js, and Tailwind CSS, while continuously expanding my knowledge of modern web technologies and development practices."
+  },
+  "experience": {
+    "title": "MY EXPERIENCE",
+    "description": "A look at my journey in frontend development and the projects that have helped me grow my skills.",
+    "items": [
+      {
+        "period": "2024 — PRESENT",
+        "title": "FRONTEND DEVELOPMENT",
+        "description": "Building and improving real-world web applications while developing a stronger understanding of modern frontend development.",
+        "details": [
+          "Developing responsive interfaces with React and Next.js",
+          "Building reusable and maintainable components",
+          "Working with REST APIs and external data",
+          "Using Tailwind CSS to create responsive and consistent UI",
+          "Managing projects and workflows with Git and GitHub"
+        ]
+      },
+      {
+        "period": "2025 — PRESENT",
+        "title": "REAL-WORLD PROJECTS",
+        "description": "Applying frontend development skills by building complete projects that solve practical problems and reflect real-world development workflows.",
+        "details": [
+          "Modern Admin Dashboard",
+          "Modern Clothes Shop",
+          "Responsive portfolio development",
+          "API integration and dynamic data handling",
+          "Deployment and production-ready workflows"
+        ]
+      }
+    ]
+  }
+},
 
   "capabilities": {
     "title": "MY CAPABILITIES",
@@ -132,4 +169,5 @@
   "footer": {
     "copyright": "© 2026 Soroush Tarizadeh"
   }
+  
 }

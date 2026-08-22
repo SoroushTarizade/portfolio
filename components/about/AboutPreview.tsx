@@ -1,15 +1,27 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import type { Locale } from "@/lib/i18n/config";
+import { getTranslations } from "@/lib/i18n/getTranslations";
 
-export default function AboutPreview() {
+type AboutPreviewProps = {
+  locale: Locale;
+};
+
+export default function AboutPreview({
+  locale,
+}: AboutPreviewProps) {
+  const t = getTranslations(locale);
+
   return (
     <section className="w-full border-t border-text-secondary/50">
       <div className="mx-auto w-full max-w-7xl px-4 py-12 sm:px-6 md:px-8 md:py-16 lg:px-10 lg:py-20">
 
         {/* Section Title */}
         <h2 className="mb-10 text-3xl font-bold sm:text-4xl min-[720px]:hidden">
-          ABOUT ME
+          {t.about.preview.link === "MORE ABOUT ME"
+            ? t.about.title
+            : t.about.title}
         </h2>
 
         {/* Content */}
@@ -35,29 +47,25 @@ export default function AboutPreview() {
 
             {/* Desktop / Tablet Heading */}
             <h2 className="mb-6 hidden text-3xl font-bold leading-tight min-[720px]:block sm:text-4xl lg:text-5xl">
-              ABOUT ME
+              {t.about.title}
             </h2>
 
             {/* Intro */}
             <p className="text-base font-medium leading-8 text-foreground sm:text-lg lg:text-xl lg:leading-9">
-              I’m a frontend developer focused on building modern, responsive,
-              and user-friendly web experiences. I enjoy turning ideas into
-              clean interfaces and solving problems through code.
+              {t.about.preview.intro}
             </p>
 
             {/* Additional Description */}
             <p className="mt-5 hidden text-sm leading-7 text-text-secondary min-[720px]:block lg:text-base lg:leading-8">
-              I’m continuously exploring new technologies and improving my
-              skills by building real-world projects. Outside of programming,
-              I enjoy playing volleyball, photography, and gaming.
+              {t.about.preview.description}
             </p>
 
             {/* Link */}
             <Link
-              href="/about"
+              href={`/${locale}/about`}
               className="mt-7 inline-block border-b-2 border-accent pb-1 text-sm font-medium text-accent transition-opacity duration-300 hover:opacity-70"
             >
-              MORE ABOUT ME
+              {t.about.preview.link}
             </Link>
           </div>
         </div>

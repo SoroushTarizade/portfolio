@@ -1,55 +1,35 @@
 import React from "react";
+import type { Locale } from "@/lib/i18n/config";
+import { getTranslations } from "@/lib/i18n/getTranslations";
 
-const experiences = [
-  {
-    period: "2024 — PRESENT",
-    title: "FRONTEND DEVELOPMENT",
-    description:
-      "Building and improving real-world web applications while developing a stronger understanding of modern frontend development.",
-    details: [
-      "Developing responsive interfaces with React and Next.js",
-      "Building reusable and maintainable components",
-      "Working with REST APIs and external data",
-      "Using Tailwind CSS to create responsive and consistent UI",
-      "Managing projects and workflows with Git and GitHub",
-    ],
-  },
-  {
-    period: "2025 — PRESENT",
-    title: "REAL-WORLD PROJECTS",
-    description:
-      "Applying frontend development skills by building complete projects that solve practical problems and reflect real-world development workflows.",
-    details: [
-      "Modern Admin Dashboard",
-      "Modern Clothes Shop",
-      "Responsive portfolio development",
-      "API integration and dynamic data handling",
-      "Deployment and production-ready workflows",
-    ],
-  },
-];
+type ExperienceProps = {
+  locale: Locale;
+};
 
-export default function Experience() {
+export default function Experience({
+  locale,
+}: ExperienceProps) {
+  const t = getTranslations(locale);
+
   return (
     <section className="w-full border-t border-text-secondary/50">
       <div className="mx-auto w-full max-w-7xl px-4 py-14 sm:px-6 md:px-8 md:py-16 lg:px-10 lg:py-20">
         <div className="grid gap-12 min-[720px]:grid-cols-[0.8fr_1.2fr] min-[720px]:gap-16 lg:grid-cols-[0.7fr_1.3fr] lg:gap-24">
-          
+
           {/* Heading */}
           <div>
             <h2 className="text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl">
-              MY EXPERIENCE
+              {t.about.experience.title}
             </h2>
 
             <p className="mt-5 max-w-sm text-base leading-7 text-text-secondary sm:text-lg">
-              A look at my journey in frontend development and the projects
-              that have helped me grow my skills.
+              {t.about.experience.description}
             </p>
           </div>
 
           {/* Experience List */}
           <div className="space-y-12">
-            {experiences.map((experience, index) => (
+            {t.about.experience.items.map((experience, index) => (
               <article
                 key={experience.title}
                 className="relative border-l border-text-secondary/40 pl-6 sm:pl-8"
@@ -83,7 +63,7 @@ export default function Experience() {
                   ))}
                 </ul>
 
-                {index !== experiences.length - 1 && (
+                {index !== t.about.experience.items.length - 1 && (
                   <div className="mt-10 h-px w-full bg-text-secondary/20 min-[720px]:hidden" />
                 )}
               </article>
