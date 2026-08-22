@@ -1,53 +1,116 @@
 # Soroush Tarizadeh — Portfolio
 
-> A modern personal portfolio website built to showcase my work, frontend development skills, selected projects, and experience.
+> A modern, bilingual personal portfolio built to showcase my frontend development skills, selected projects, experience, and technical capabilities.
 
-[![Live Portfolio](https://img.shields.io/badge/Live%20Portfolio-soroush--portfolio.onrender.com-D3E97A?style=for-the-badge\&logo=googlechrome\&logoColor=black)](https://soroush-portfolio.onrender.com/)
+[![Live Portfolio](https://img.shields.io/badge/Live%20Portfolio-soroush--portfolio.onrender.com-D3E97A?style=for-the-badge&logo=googlechrome&logoColor=black)](https://soroush-portfolio.onrender.com/)
+[![GitHub](https://img.shields.io/badge/GitHub-SoroushTarizade-181717?style=for-the-badge&logo=github)](https://github.com/SoroushTarizade)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Soroush%20Tarizadeh-0A66C2?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/soroush-tarizadeh/)
 
-![Soroush Tarizadeh Portfolio](./asset/screenshot/Home.png)
+---
 
 ## Overview
 
-This is my personal portfolio website, designed and developed to present my work as a Frontend Developer.
+This is my personal portfolio website, designed and developed to present my work and experience as a Frontend Developer.
 
-The project focuses on clean UI, responsive layouts, reusable React components, and a straightforward user experience. It includes selected projects, an introduction to my capabilities and experience, a resume link, social profiles, and a functional contact form with server-side email delivery.
+The project focuses on clean and responsive UI, reusable React components, accessible interactions, bilingual content, and a production-oriented Next.js architecture.
 
-The application is built with the Next.js App Router and TypeScript, with Tailwind CSS used for styling and responsive design.
+The portfolio includes selected projects, an introduction to my capabilities and experience, a resume, social profiles, and a functional contact form with server-side email delivery.
+
+The application is built with the **Next.js App Router** and **TypeScript**, with **Tailwind CSS** used for styling and responsive design.
+
+---
 
 ## Features
 
-* Responsive portfolio layout for desktop, tablet, and mobile
-* Hero section with personal introduction and social links
-* Featured projects with live demos and GitHub repositories
-* Project image preview with fullscreen viewing
-* About section with capabilities and development experience
-* Resume download
-* Responsive mobile navigation
-* Functional contact form
-* Loading, success, and error states for form submission
-* Server-side email delivery with Resend
-* Custom 404 page
-* SEO-friendly metadata
-* Open Graph and Twitter metadata
-* Optimized images with Next.js Image
-* Custom typography with Plus Jakarta Sans
-* Custom design system built with Tailwind CSS
+- 🌐 **Bilingual interface** with English and Persian
+- 🔄 **Language switcher** that preserves the current route
+- 📱 Fully responsive layout for desktop, tablet, and mobile
+- 👋 Hero section with personal introduction and social links
+- 💼 Featured projects with live demos and GitHub repositories
+- 🖼️ Project image previews
+- 👨‍💻 About section with capabilities and development experience
+- 📄 Resume access
+- 🧭 Responsive navigation with mobile menu
+- 📬 Functional contact form
+- ✉️ Server-side email delivery using Resend
+- 🔒 Server-side API key handling
+- 🛡️ Server-side input validation and HTML escaping
+- ❌ Localized 404 pages
+- 🔗 Localized fallback routing for unknown paths
+- 🔎 Language-specific SEO metadata
+- 🌐 Open Graph and Twitter metadata
+- 🖼️ Optimized images with Next.js
+- ✨ Custom UI system built with Tailwind CSS
+- 🔤 Custom typography using Plus Jakarta Sans
+
+---
+
+## Internationalization
+
+The portfolio supports two languages:
+
+| Language | Route |
+| --- | --- |
+| English | `/en` |
+| فارسی | `/fa` |
+
+Localized pages are structured using the Next.js App Router:
+
+```text
+/en
+/en/about
+
+/fa
+/fa/about
+```
+
+The language switcher preserves the current page whenever an equivalent route exists.
+
+For example:
+
+```text
+/en/about
+      ↓
+/fa/about
+```
+
+The application also automatically sets the correct text direction:
+
+```text
+English → LTR
+Persian → RTL
+```
+
+Translations are managed through JSON files:
+
+```text
+lib/i18n/
+├── config.ts
+├── en.json
+├── fa.json
+└── getTranslations.ts
+```
+
+---
 
 ## Tech Stack
 
 ### Core
 
-* **Next.js 16.3.1**
-* **React 19.2.8**
-* **TypeScript 5**
-* **Tailwind CSS 4**
+- **Next.js 16.3.1**
+- **React 19**
+- **TypeScript**
+- **Tailwind CSS 4**
 
 ### Supporting Tools
 
-* **React Icons** — UI and social icons
-* **Resend** — Contact form email delivery
-* **ESLint** — Code quality and linting
-* **Next/Image** — Image optimization
+- **React Icons** — UI and social icons
+- **Resend** — Contact form email delivery
+- **ESLint** — Code quality and linting
+- **Next/Image** — Image optimization
+- **next/font** — Font optimization
+
+---
 
 ## Featured Projects
 
@@ -55,27 +118,35 @@ The application is built with the Next.js App Router and TypeScript, with Tailwi
 
 A modern admin dashboard built with Next.js and Tailwind CSS, focused on creating a clean, responsive, and reusable interface for managing dashboard data.
 
+**Year:** 2026  
+**Role:** Frontend Developer
+
+- **Live Demo:** https://modern-admin-dashboard-g2yl.onrender.com/
+- **Repository:** https://github.com/SoroushTarizade/modern-admin-dashboard
+
 ![DashStack](./public/images/dashboard-screen.png)
 
-* **Year:** 2026
-* **Role:** Frontend Developer
-* **Live Demo:** https://modern-admin-dashboard-g2yl.onrender.com/
-* **Repository:** https://github.com/SoroushTarizade/modern-admin-dashboard
+---
 
 ### Modern Clothes Shop
 
 A modern and responsive e-commerce web application built with Next.js and React, featuring product browsing, authentication, search, category filtering, and shopping cart management.
 
+**Year:** 2025  
+**Role:** Frontend Developer
+
+- **Live Demo:** https://clotheshop.onrender.com/
+- **Repository:** https://github.com/SoroushTarizade/clotheshop
+
 ![Modern Clothes Shop](./public/images/clothe-shopscreen.png)
 
-* **Year:** 2025
-* **Role:** Frontend Developer
-* **Live Demo:** https://clotheshop.onrender.com/
-* **Repository:** https://github.com/SoroushTarizade/clotheshop
+---
 
-## Contact & Email Integration
+## Contact API
 
 The portfolio includes a functional contact form connected to a Next.js Route Handler.
+
+The request flow is:
 
 ```text
 Contact Form
@@ -84,25 +155,47 @@ POST /api/contact
      ↓
 Next.js Route Handler
      ↓
+Input Validation
+     ↓
+HTML Escaping
+     ↓
 Resend API
      ↓
 Email Delivery
 ```
 
-The API performs required-field validation and handles successful and failed email delivery with appropriate HTTP responses.
+The API:
 
-The Resend API key is stored as an environment variable and is never exposed in the client-side application.
+- Validates required fields
+- Validates incoming input types
+- Limits input lengths
+- Validates email format
+- Escapes user-provided HTML before inserting it into the email
+- Handles successful and failed requests with appropriate HTTP responses
+- Keeps the Resend API key on the server
+
+The API key is stored in an environment variable and is never exposed through client-side code.
+
+---
 
 ## Project Structure
 
 ```text
 portfolio/
 ├── app/
-│   ├── about/
+│   ├── [locale]/
+│   │   ├── [...slug]/
+│   │   │   └── page.tsx
+│   │   ├── about/
+│   │   │   └── page.tsx
+│   │   ├── layout.tsx
+│   │   ├── not-found.tsx
 │   │   └── page.tsx
+│   │
 │   ├── api/
 │   │   └── contact/
 │   │       └── route.ts
+│   │
 │   ├── globals.css
 │   ├── layout.tsx
 │   ├── not-found.tsx
@@ -114,23 +207,36 @@ portfolio/
 │   │   ├── AboutPreview.tsx
 │   │   ├── Capabilities.tsx
 │   │   └── Experience.tsx
+│   │
 │   ├── contact/
 │   │   └── Contact.tsx
+│   │
 │   ├── header/
 │   │   └── Header.tsx
+│   │
 │   ├── hero/
 │   │   └── Hero.tsx
+│   │
+│   ├── language/
+│   │   └── LanguageSwitcher.tsx
+│   │
 │   └── projects/
 │       ├── FeaturedProjects.tsx
 │       └── ProjectCard.tsx
 │
+├── lib/
+│   └── i18n/
+│       ├── config.ts
+│       ├── en.json
+│       ├── fa.json
+│       └── getTranslations.ts
+│
 ├── public/
 │   ├── fonts/
+│   │   └── Plus_Jakarta_Sans/
 │   └── images/
 │
-├── asset/
-│   └── screenshot/
-│
+├── .gitignore
 ├── next.config.ts
 ├── package.json
 ├── postcss.config.mjs
@@ -138,11 +244,16 @@ portfolio/
 └── README.md
 ```
 
+---
+
 ## Getting Started
 
 ### Prerequisites
 
-Make sure you have Node.js and npm installed.
+Make sure you have the following installed:
+
+- Node.js
+- npm
 
 ### Installation
 
@@ -153,13 +264,15 @@ git clone <YOUR-PORTFOLIO-REPOSITORY-URL>
 cd portfolio
 ```
 
-Install the dependencies:
+Install dependencies:
 
 ```bash
 npm install
 ```
 
-### Environment Variables
+---
+
+## Environment Variables
 
 Create a `.env.local` file in the project root:
 
@@ -167,91 +280,189 @@ Create a `.env.local` file in the project root:
 RESEND_API_KEY=your_resend_api_key
 ```
 
-Replace `your_resend_api_key` with your Resend API key.
+Replace `your_resend_api_key` with your actual Resend API key.
 
 > Never commit `.env.local` or expose your API key in client-side code.
 
-### Run the Development Server
+Environment files are excluded through `.gitignore`.
+
+---
+
+## Development
+
+Start the development server:
 
 ```bash
 npm run dev
 ```
 
-Open http://localhost:3000 in your browser.
+Then open:
+
+```text
+http://localhost:3000
+```
+
+The root route redirects to the default language:
+
+```text
+/
+↓
+/en
+```
+
+---
+
+## Production
+
+Create an optimized production build:
+
+```bash
+npm run build
+```
+
+Start the production server:
+
+```bash
+npm start
+```
+
+---
 
 ## Available Scripts
 
-| Command         | Description                           |
-| --------------- | ------------------------------------- |
-| `npm run dev`   | Starts the development server         |
+| Command | Description |
+| --- | --- |
+| `npm run dev` | Starts the development server |
 | `npm run build` | Creates an optimized production build |
-| `npm run start` | Starts the production server          |
-| `npm run lint`  | Runs ESLint                           |
+| `npm run start` | Starts the production server |
+| `npm run lint` | Runs ESLint |
 
-## Design & UI
-
-The portfolio uses a custom visual system built on top of Tailwind CSS.
-
-Key design characteristics include:
-
-* Dark background with high-contrast typography
-* Lime accent color
-* Responsive spacing and typography
-* Consistent rounded UI elements
-* Interactive hover states
-* Smooth scrolling
-* Responsive navigation
-* Project image preview interactions
-
-The primary typeface is **Plus Jakarta Sans**, loaded through Next.js font optimization.
+---
 
 ## SEO & Metadata
 
-The application includes metadata configuration for:
+The portfolio uses the **Next.js Metadata API** to provide language-specific metadata for the English and Persian versions of the website.
 
-* Page title and description
-* Keywords
-* Author information
-* Open Graph
-* Twitter Cards
-* Search engine indexing
-* Site icons
+The metadata configuration includes:
 
-This helps improve how the portfolio is presented in search engines and when shared across social platforms.
+- Page titles
+- Meta descriptions
+- Author information
+- Robots directives
+- Open Graph metadata
+- Twitter card metadata
+- Site icons
+
+English and Persian routes receive their corresponding metadata.
+
+For example:
+
+```text
+/en
+→ Soroush Tarizadeh | Frontend Developer
+
+/fa
+→ سروش طری‌زاده | توسعه‌دهنده فرانت‌اند
+```
+
+The application also uses the appropriate document language and text direction:
+
+```text
+English → lang="en" dir="ltr"
+
+Persian → lang="fa" dir="rtl"
+```
+
+---
+
+## Design & UI
+
+The portfolio uses a custom visual system built with Tailwind CSS.
+
+Key design characteristics include:
+
+- Dark visual theme
+- High-contrast typography
+- Lime accent color
+- Responsive spacing and typography
+- Rounded UI elements
+- Interactive hover states
+- Smooth transitions
+- Responsive navigation
+- Mobile menu
+- Bilingual interface
+- RTL support for Persian content
+
+The primary typeface is **Plus Jakarta Sans**, optimized through Next.js font handling.
+
+---
+
+## Error Handling
+
+The application includes localized error handling for unknown routes.
+
+Examples:
+
+```text
+/en/unknown-page
+→ English 404
+
+/fa/unknown-page
+→ Persian 404
+```
+
+A localized catch-all route is also used to provide the correct language-specific fallback experience.
+
+---
 
 ## Deployment
 
-The portfolio is deployed and publicly available at:
+The portfolio is publicly deployed at:
 
 **https://soroush-portfolio.onrender.com/**
 
-The production application runs as a Next.js application, with server-side configuration such as the Resend API key provided through environment variables.
+The production application runs as a Next.js application.
+
+Environment variables such as the Resend API key are configured through the deployment environment rather than committed to the repository.
+
+---
 
 ## Development Focus
 
 While building this portfolio, I focused on:
 
-* Building reusable React components
-* Creating responsive layouts
-* Working with the Next.js App Router
-* Using TypeScript for type-safe development
-* Designing clean and maintainable UI
-* Handling client-side form interactions
-* Building server-side API routes
-* Integrating third-party services
-* Optimizing images and typography
-* Following production-oriented development workflows
-
-## Author
-
-**Soroush Tarizadeh**
-
-Frontend Developer focused on building modern, responsive, and user-friendly web experiences.
-
-* **Portfolio:** https://soroush-portfolio.onrender.com/
-* **GitHub:** https://github.com/SoroushTarizade
-* **LinkedIn:** https://www.linkedin.com/in/soroush-tarizadeh/
+- Building reusable React components
+- Creating responsive layouts
+- Working with the Next.js App Router
+- Using TypeScript for type-safe development
+- Implementing bilingual routing
+- Supporting RTL interfaces
+- Designing clean and maintainable UI
+- Handling client-side form interactions
+- Building server-side API routes
+- Integrating third-party services
+- Implementing server-side input validation
+- Protecting environment variables
+- Optimizing images and typography
+- Implementing SEO metadata
+- Following production-oriented development workflows
 
 ---
 
-If you have a project idea, opportunity, or just want to connect, feel free to reach out through the portfolio.
+## Author
+
+### Soroush Tarizadeh
+
+Frontend Developer focused on building modern, responsive, and user-friendly web experiences.
+
+- **Portfolio:** https://soroush-portfolio.onrender.com/
+- **GitHub:** https://github.com/SoroushTarizade
+- **LinkedIn:** https://www.linkedin.com/in/soroush-tarizadeh/
+
+---
+
+If you have a project idea, opportunity, or simply want to connect, feel free to reach out through the portfolio.
+
+---
+
+### Built with Next.js, React, TypeScript & Tailwind CSS

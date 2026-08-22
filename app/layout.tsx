@@ -13,15 +13,6 @@ export const metadata: Metadata = {
   description:
     "Soroush Tarizadeh is a Frontend Developer focused on building modern, responsive, and user-friendly web experiences with React, Next.js, and modern web technologies.",
 
-  keywords: [
-    "Soroush Tarizadeh",
-    "Frontend Developer",
-    "React Developer",
-    "Next.js Developer",
-    "JavaScript Developer",
-    "Web Developer",
-  ],
-
   authors: [
     {
       name: "Soroush Tarizadeh",
@@ -34,21 +25,6 @@ export const metadata: Metadata = {
     icon: "/images/logo.png",
     shortcut: "/images/logo.png",
     apple: "/images/logo.png",
-  },
-
-  openGraph: {
-    title: "Soroush Tarizadeh | Frontend Developer",
-    description:
-      "Frontend Developer focused on building modern, responsive, and user-friendly web experiences.",
-    type: "website",
-    locale: "en_US",
-  },
-
-  twitter: {
-    card: "summary_large_image",
-    title: "Soroush Tarizadeh | Frontend Developer",
-    description:
-      "Frontend Developer focused on building modern, responsive, and user-friendly web experiences.",
   },
 
   robots: {
