@@ -4,8 +4,10 @@ import Image from "next/image";
 import { FaLinkedinIn } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa6";
 import { GoArrowUpRight } from "react-icons/go";
-
-export default function Hero() {
+import type { Locale } from "@/lib/i18n/config";
+import { getTranslations } from "@/lib/i18n/getTranslations";
+export default function Hero({ locale }: { locale: Locale }) {
+  const t = getTranslations(locale);
   return (
     <section className="w-full">
       <div
@@ -33,13 +35,12 @@ export default function Hero() {
                 md:text-6xl
               "
             >
-              <span className="block">HI, I’M</span>
-              <span className="block">SOROUSH TARIZADEH.</span>
+              <span className="block">{t.hero.greeting}</span>
+              <span className="block">{t.hero.name}</span>
             </h1>
 
             <p className="mb-10 max-w-lg text-sm leading-7 md:text-base md:leading-8">
-              A FRONTEND DEVELOPER PASSIONATE ABOUT TURNING IDEAS INTO MODERN,
-              RESPONSIVE, AND INTUITIVE DIGITAL EXPERIENCES.
+              {t.hero.description}
             </p>
           </div>
 
@@ -49,7 +50,7 @@ export default function Hero() {
               href="/#contact"
               className="flex h-12 w-40 items-center justify-around rounded-full bg-accent text-background transition-transform duration-300 hover:scale-105"
             >
-              <span className="font-medium">Contact Me</span>
+              <span className="font-medium">{t.hero.contactButton}</span>
 
               <span className="flex h-10 w-10 items-center justify-center rounded-full bg-background">
                 <GoArrowUpRight className="text-2xl font-extrabold text-accent" />

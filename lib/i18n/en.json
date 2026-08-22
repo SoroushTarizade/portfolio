@@ -9,7 +9,7 @@
     "greeting": "HI, I’M",
     "name": "SOROUSH TARIZADEH.",
     "description": "A FRONTEND DEVELOPER PASSIONATE ABOUT TURNING IDEAS INTO MODERN, RESPONSIVE, AND INTUITIVE DIGITAL EXPERIENCES.",
-    "contact": "Contact Me"
+    "contactButton": "Contact Me"
   },
 
   "projects": {
