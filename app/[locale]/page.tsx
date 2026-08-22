@@ -1,24 +1,15 @@
-import { notFound } from "next/navigation";
-import { isValidLocale } from "@/lib/i18n/config";
+import Hero from "@/components/hero/Hero";
+import FeaturedProjects from "@/components/projects/FeaturedProjects";
+import AboutPreview from "@/components/about/AboutPreview";
+import Contact from "@/components/contact/Contact";
 
-type HomePageProps = {
-  params: Promise<{
-    locale: string;
-  }>;
-};
-
-export default async function HomePage({
-  params,
-}: HomePageProps) {
-  const { locale } = await params;
-
-  if (!isValidLocale(locale)) {
-    notFound();
-  }
-
+export default function Home() {
   return (
-    <main>
-      <h1>{locale === "fa" ? "صفحه اصلی" : "Home Page"}</h1>
-    </main>
+    <>
+      <Hero />
+      <FeaturedProjects />
+      <AboutPreview />
+      <Contact />
+    </>
   );
 }
