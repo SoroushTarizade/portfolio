@@ -2,59 +2,81 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { RiMenu3Line, RiCloseLine } from "react-icons/ri";
+
 import type { Locale } from "@/lib/i18n/config";
 import { getTranslations } from "@/lib/i18n/getTranslations";
-function Header( {locale} : { locale:Locale } ) {
+import LanguageSwitcher from "@/components/language/LanguageSwitcher";
+
+type HeaderProps = {
+  locale: Locale;
+};
+
+function Header({ locale }: HeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   const t = getTranslations(locale);
+
   const closeMenu = () => {
     setIsMenuOpen(false);
   };
 
   return (
     <header className="w-full">
-      <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-4 py-4 md:px-8 lg:px-10">
-        
+      <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-4 py-4 md:px-12 lg:px-12">
         {/* Logo */}
         <Link
-          href="/"
-          className="text-xl font-bold text-text-secondary transition-colors duration-300 hover:text-foreground md:text-2xl"
+          href={`/${locale}`}
+          aria-label="Soroush Tarizadeh"
+          className="shrink-0 transition-opacity duration-300 hover:opacity-80"
         >
-          Soroush Tarizadeh
+          <Image
+            src="/images/logo-1.png"
+            alt="Soroush Tarizadeh"
+            width={58}
+            height={58}
+            priority
+            className="h-15 w-auto object-contain md:h-20"
+          />
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:block">
-          <ul className="flex items-center gap-8 text-text-secondary">
-            <li>
-              <Link
-                href={`/${locale}#work`}
-                className="transition-colors duration-300 hover:text-accent"
-              >
-                {t.header.work}
-              </Link>
-            </li>
+        <div className="hidden items-center gap-8 md:flex">
+          <nav>
+            <ul className="flex items-center gap-8 text-text-secondary">
+              <li>
+                <Link
+                  href={`/${locale}#work`}
+                  className="transition-colors duration-300 hover:text-accent"
+                >
+                  {t.header.work}
+                </Link>
+              </li>
 
-            <li>
-              <Link
-                href={`/${locale}/about`}
-                className="transition-colors duration-300 hover:text-accent"
-              >
-                {t.header.about}
-              </Link>
-            </li>
+              <li>
+                <Link
+                  href={`/${locale}/about`}
+                  className="transition-colors duration-300 hover:text-accent"
+                >
+                  {t.header.about}
+                </Link>
+              </li>
 
-            <li>
-              <Link
-                href={`/${locale}#contact`}
-                className="transition-colors duration-300 hover:text-accent"
-              >
-                {t.header.contact}
-              </Link>
-            </li>
-          </ul>
-        </nav>
+              <li>
+                <Link
+                  href={`/${locale}#contact`}
+                  className="transition-colors duration-300 hover:text-accent"
+                >
+                  {t.header.contact}
+                </Link>
+              </li>
+            </ul>
+          </nav>
+
+          {/* Language Switcher */}
+          <LanguageSwitcher locale={locale} />
+        </div>
 
         {/* Mobile Menu Button */}
         <button
@@ -71,11 +93,12 @@ function Header( {locale} : { locale:Locale } ) {
           )}
         </button>
       </div>
+
       {/* Mobile Navigation */}
       <div
         className={`overflow-hidden transition-all duration-300 ease-in-out md:hidden ${
           isMenuOpen
-            ? "max-h-80 opacity-100"
+            ? "max-h-96 opacity-100"
             : "max-h-0 opacity-0"
         }`}
       >
@@ -111,6 +134,11 @@ function Header( {locale} : { locale:Locale } ) {
               </Link>
             </li>
           </ul>
+
+          {/* Mobile Language Switcher */}
+          <div className="mt-6 border-t border-text-secondary/20 pt-6">
+            <LanguageSwitcher locale={locale} />
+          </div>
         </nav>
       </div>
     </header>
