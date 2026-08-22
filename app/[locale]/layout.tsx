@@ -21,7 +21,7 @@ export default async function LocaleLayout({
 
   return (
     <div lang={locale} dir={locale === "fa" ? "rtl" : "ltr"}>
-      <Header />
+      <Header locale={locale} />
       {children}
     </div>
   );

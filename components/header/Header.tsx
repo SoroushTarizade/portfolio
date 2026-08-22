@@ -3,10 +3,11 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { RiMenu3Line, RiCloseLine } from "react-icons/ri";
-
-function Header() {
+import type { Locale } from "@/lib/i18n/config";
+import { getTranslations } from "@/lib/i18n/getTranslations";
+function Header( {locale} : { locale:Locale } ) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+  const t = getTranslations(locale);
   const closeMenu = () => {
     setIsMenuOpen(false);
   };
@@ -28,28 +29,28 @@ function Header() {
           <ul className="flex items-center gap-8 text-text-secondary">
             <li>
               <Link
-                href="/#work"
+                href={`/${locale}#work`}
                 className="transition-colors duration-300 hover:text-accent"
               >
-                Work
+                {t.header.work}
               </Link>
             </li>
 
             <li>
               <Link
-                href="/about"
+                href={`/${locale}/about`}
                 className="transition-colors duration-300 hover:text-accent"
               >
-                About
+                {t.header.about}
               </Link>
             </li>
 
             <li>
               <Link
-                href="/#contact"
+                href={`/${locale}#contact`}
                 className="transition-colors duration-300 hover:text-accent"
               >
-                Contact
+                {t.header.contact}
               </Link>
             </li>
           </ul>
@@ -70,7 +71,6 @@ function Header() {
           )}
         </button>
       </div>
-
       {/* Mobile Navigation */}
       <div
         className={`overflow-hidden transition-all duration-300 ease-in-out md:hidden ${
@@ -83,31 +83,31 @@ function Header() {
           <ul className="flex flex-col gap-6 border-t border-text-secondary/20 pt-6 text-lg text-text-secondary">
             <li>
               <Link
-                href="/#work"
+                href={`/${locale}#work`}
                 onClick={closeMenu}
                 className="block transition-colors duration-300 hover:text-accent"
               >
-                Work
+                {t.header.work}
               </Link>
             </li>
 
             <li>
               <Link
-                href="/about"
+                href={`/${locale}/about`}
                 onClick={closeMenu}
                 className="block transition-colors duration-300 hover:text-accent"
               >
-                About
+                {t.header.about}
               </Link>
             </li>
 
             <li>
               <Link
-                href="/#contact"
+                href={`/${locale}#contact`}
                 onClick={closeMenu}
                 className="block transition-colors duration-300 hover:text-accent"
               >
-                Contact
+                {t.header.contact}
               </Link>
             </li>
           </ul>
