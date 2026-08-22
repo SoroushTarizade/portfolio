@@ -18,7 +18,7 @@ export default async function Home({ params }: HomePageProps) {
       <Hero locale={locale} />
       <FeaturedProjects locale={locale}/>
       <AboutPreview locale={locale}/>
-      <Contact />
+      <Contact locale={locale}/>
     </>
   );
 }

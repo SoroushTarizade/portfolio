@@ -20,7 +20,7 @@ export default async function AboutPage({
       <About locale={locale} />
       <Capabilities locale={locale} />
       <Experience locale={locale} />
-      <Contact />
+      <Contact locale={locale} />
     </>
   );
 }

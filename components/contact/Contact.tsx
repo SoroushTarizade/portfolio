@@ -8,10 +8,18 @@ import {
   FaGithub,
 } from "react-icons/fa";
 import Link from "next/link";
+import type { Locale } from "@/lib/i18n/config";
+import { getTranslations } from "@/lib/i18n/getTranslations";
 
-export default function Contact() {
+type ContactProps = {
+  locale: Locale;
+};
+
+export default function Contact({ locale }: ContactProps) {
   const [isSending, setIsSending] = useState(false);
   const [status, setStatus] = useState<"success" | "error" | "">("");
+
+  const t = getTranslations(locale);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -58,12 +66,12 @@ export default function Contact() {
         {/* Contact Info */}
         <div>
           <h2 className="text-3xl font-bold sm:text-4xl lg:text-5xl">
-            LET’S CONNECT
+            {t.contact.title}
           </h2>
 
           <div className="mt-6 text-sm leading-7 text-text-secondary sm:text-base">
             <p>
-              Say hello at{" "}
+              {t.contact.emailText}{" "}
               <a
                 href="mailto:Soroushtarizadeh7139@gmail.com"
                 className="text-foreground underline decoration-accent decoration-2 underline-offset-4 transition-colors duration-300 hover:text-accent"
@@ -73,14 +81,14 @@ export default function Contact() {
             </p>
 
             <p className="mt-3">
-              For more info, here’s my{" "}
+              {t.contact.resumeText}{" "}
               <a
                 href="/resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-foreground underline decoration-accent decoration-2 underline-offset-4 transition-colors duration-300 hover:text-accent"
               >
-                resume
+                {t.contact.resume}
               </a>
             </p>
           </div>
@@ -146,12 +154,11 @@ export default function Contact() {
           {status === "success" && (
             <div className="animate-in fade-in slide-in-from-top-2 rounded-lg border border-accent/30 bg-accent/10 px-5 py-4">
               <p className="font-medium text-accent">
-                Message sent successfully.
+                {t.contact.successTitle}
               </p>
 
               <p className="mt-1 text-sm leading-6 text-text-secondary">
-                Thanks for reaching out. I’ll get back to you as soon as
-                possible.
+                {t.contact.successDescription}
               </p>
             </div>
           )}
@@ -160,11 +167,11 @@ export default function Contact() {
           {status === "error" && (
             <div className="rounded-lg border border-red-400/30 bg-red-400/10 px-5 py-4">
               <p className="font-medium text-red-300">
-                Something went wrong.
+                {t.contact.errorTitle}
               </p>
 
               <p className="mt-1 text-sm leading-6 text-text-secondary">
-                Your message could not be sent. Please try again.
+                {t.contact.errorDescription}
               </p>
             </div>
           )}
@@ -175,7 +182,7 @@ export default function Contact() {
               htmlFor="name"
               className="text-sm text-text-secondary"
             >
-              Name
+              {t.contact.name}
             </label>
 
             <input
@@ -183,7 +190,7 @@ export default function Contact() {
               name="name"
               type="text"
               required
-              placeholder="Soroush"
+              placeholder={t.contact.namePlaceholder}
               className="mt-2 h-12 w-full rounded-sm bg-background-secondary px-4 text-foreground outline-none transition-all duration-300 placeholder:text-text-secondary/60 focus:ring-2 focus:ring-accent"
             />
           </div>
@@ -194,7 +201,7 @@ export default function Contact() {
               htmlFor="email"
               className="text-sm text-text-secondary"
             >
-              Email
+              {t.contact.email}
             </label>
 
             <input
@@ -202,7 +209,7 @@ export default function Contact() {
               name="email"
               type="email"
               required
-              placeholder="Soroushtarizadeh7139@gmail.com"
+              placeholder={t.contact.emailPlaceholder}
               className="mt-2 h-12 w-full rounded-sm bg-background-secondary px-4 text-foreground outline-none transition-all duration-300 placeholder:text-text-secondary/60 focus:ring-2 focus:ring-accent"
             />
           </div>
@@ -213,7 +220,7 @@ export default function Contact() {
               htmlFor="subject"
               className="text-sm text-text-secondary"
             >
-              Subject
+              {t.contact.subject}
             </label>
 
             <input
@@ -221,7 +228,7 @@ export default function Contact() {
               name="subject"
               type="text"
               required
-              placeholder="Subject"
+              placeholder={t.contact.subjectPlaceholder}
               className="mt-2 h-12 w-full rounded-sm bg-background-secondary px-4 text-foreground outline-none transition-all duration-300 placeholder:text-text-secondary/60 focus:ring-2 focus:ring-accent"
             />
           </div>
@@ -232,7 +239,7 @@ export default function Contact() {
               htmlFor="message"
               className="text-sm text-text-secondary"
             >
-              Message
+              {t.contact.message}
             </label>
 
             <textarea
@@ -240,7 +247,7 @@ export default function Contact() {
               name="message"
               required
               rows={6}
-              placeholder="Talk to me..."
+              placeholder={t.contact.messagePlaceholder}
               className="mt-2 w-full resize-y rounded-sm bg-background-secondary px-4 py-3 text-foreground outline-none transition-all duration-300 placeholder:text-text-secondary/60 focus:ring-2 focus:ring-accent"
             />
           </div>
@@ -251,7 +258,7 @@ export default function Contact() {
             disabled={isSending}
             className="flex h-12 w-36 items-center justify-center rounded-full bg-accent px-5 font-bold text-background transition-all duration-300 hover:scale-105 hover:bg-foreground disabled:cursor-not-allowed disabled:scale-100 disabled:opacity-50"
           >
-            {isSending ? "SENDING..." : "SUBMIT"}
+            {isSending ? t.contact.sending : t.contact.submit}
           </button>
         </form>
       </div>
@@ -259,7 +266,7 @@ export default function Contact() {
       {/* Copyright */}
       <div className="mx-auto w-full max-w-7xl px-4 pb-6 sm:px-6 md:px-8 lg:px-10">
         <p className="text-sm text-text-secondary">
-          © 2026 Soroush Tarizadeh
+          {t.footer.copyright}
         </p>
       </div>
     </section>

@@ -86,5 +86,29 @@
       }
     ]
   }
+},
+"contact": {
+  "title": "بیایید در ارتباط باشیم",
+  "emailText": "ایمیل من",
+  "resumeText": "برای اطلاعات بیشتر،",
+  "resume": "رزومه من",
+  "successTitle": "پیام با موفقیت ارسال شد.",
+  "successDescription": "ممنون که با من تماس گرفتید. در اولین فرصت پاسخ خواهم داد.",
+  "errorTitle": "مشکلی پیش آمد.",
+  "errorDescription": "پیام شما ارسال نشد. لطفاً دوباره تلاش کنید.",
+  "name": "نام",
+  "email": "ایمیل",
+  "subject": "موضوع",
+  "message": "پیام",
+  "namePlaceholder": "سروش",
+  "emailPlaceholder": "Soroushtarizadeh7139@gmail.com",
+  "subjectPlaceholder": "موضوع",
+  "messagePlaceholder": "پیام خود را بنویسید...",
+  "submit": "ارسال",
+  "sending": "در حال ارسال..."
+},
+
+"footer": {
+  "copyright": "© ۲۰۲۶ سروش تاری‌زاده"
 }
 }
