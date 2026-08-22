@@ -12,15 +12,30 @@
     "contactButton": "Contact Me"
   },
 
-  "projects": {
-    "title": "FEATURED PROJECTS",
-    "description": "Here are some of the selected projects that showcase my passion for front-end development.",
-    "info": "PROJECT INFO",
-    "year": "Year",
-    "role": "Role",
-    "liveDemo": "Live Demo",
-    "github": "See on GitHub"
-  },
+"projects": {
+  "title": "FEATURED PROJECTS",
+  "description": "Here are some of the selected projects that showcase my passion for front-end development.",
+  "info": "PROJECT INFO",
+  "year": "Year",
+  "role": "Role",
+  "liveDemo": "Live Demo",
+  "github": "See on GitHub",
+  "closeImage": "Close image",
+  "items": {
+    "dashstack": {
+      "title": "SoroushDash",
+      "description": "A modern admin dashboard built with Next.js and Tailwind CSS, focused on creating a clean, responsive, and reusable interface for managing dashboard data.",
+      "imageAlt": "DashStack admin dashboard",
+      "role": "Frontend Developer"
+    },
+    "clothesShop": {
+      "title": "Modern Clothes Shop",
+      "description": "A modern and responsive e-commerce web application built with Next.js and React, featuring product browsing, authentication, search, category filtering, and shopping cart management.",
+      "imageAlt": "Modern Clothes Shop",
+      "role": "Frontend Developer"
+    }
+  }
+},
 
   "aboutPreview": {
     "title": "ABOUT ME",
